@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>BBQ Today | Premium Pakistani Street Food & Smokehouse · Ajman</title>
+  <meta name="description" content="BBQ Today – Premium authentic Pakistani street food & charcoal grill in Grand Mall, Al Rashidiya 3, Ajman. Artisanal pizzas, juicy shawarmas, Anda Shami burgers & loaded fries. Order online or visit us." />
+  <meta name="theme-color" content="#0a0b0e" />
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>" />
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient Background Glow -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+
+  <!-- Announcement Bar with Live Status -->
+  <div class="top-announcement">
+    <div class="container top-bar-inner">
+      <div class="live-status-pill" id="liveStatus">
+        <span class="status-dot"></span>
+        <span class="status-text">Checking hours...</span>
+      </div>
+      <div class="announcement-text">
+        <span>📍 Grand Mall, Al Rashidiya 3, Ajman</span>
+        <span class="dot-separator">•</span>
+        <span>🔥 Authentic Desi BBQ & Charcoal Flavours</span>
+        <span class="dot-separator">•</span>
+        <span>🛵 Express Delivery & Curbside Pickup</span>
+      </div>
+      <div class="top-actions">
+        <a href="tel:+971522854003" class="top-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          052 285 4003
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="#home" class="logo" aria-label="BBQ Today home">
+        <div class="logo-mark">
+          <span class="fire-icon">🔥</span>
+          <div class="glow-ring"></div>
+        </div>
+        <div class="logo-title">
+          <span class="brand-main">BBQ<span class="gold-gradient">Today</span></span>
+          <span class="brand-tag">Gourmet Street Kitchen</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#experience" class="nav-link">Craft</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#visit" class="nav-link">Visit & Contact</a>
+        <div class="nav-cta-wrapper">
+          <a href="tel:+971522854003" class="btn btn-outline btn-sm">
+            <span>Call Now</span>
+          </a>
+          <button class="cart-nav-btn" id="navCartBtn" aria-label="Open Cart">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="nav-cart-badge" id="navCartCount">0</span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="header-right">
+        <!-- Theme Switcher -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch Theme" title="Toggle theme">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+        </button>
+
+        <!-- Cart Quick Button for Mobile/Tablet -->
+        <button class="mobile-cart-trigger" id="mobileCartTrigger" aria-label="View Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="nav-cart-badge" id="mobileCartCount">0</span>
+        </button>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section with Canvas Embers -->
+    <section class="hero" id="home">
+      <canvas id="emberCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-badge-wrap">
+            <span class="premium-badge">
+              <span class="sparkle">✨</span>
+              <span>Authentic Pakistani Street Smokehouse · Ajman</span>
+            </span>
+          </div>
+
+          <h1 class="hero-title">
+            Flavours Born In Smoke. <br />
+            <span class="gradient-text">Served In Perfection.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Sink your teeth into artisanal stuffed-crust pizzas, melt-in-mouth shawarmas, and the legendary Anda Shami burger. Handcrafted fresh every day inside Grand Mall, Al Rashidiya 3.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-primary btn-glow">
+              <span>Explore Menu</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://wa.me/971522854003?text=Hi%20BBQ%20Today%2C%20I%20would%20like%20to%20place%20an%20order!" target="_blank" rel="noopener" class="btn btn-glass">
+              <span class="whatsapp-dot"></span>
+              <span>WhatsApp Order</span>
+            </a>
+          </div>
+
+          <div class="hero-stats-card">
+            <div class="stat-item">
+              <div class="stat-header">
+                <span class="stat-number" data-target="4.3">4.3</span>
+                <span class="stat-star">★</span>
+              </div>
+              <span class="stat-label">100+ Google Reviews</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-header">
+                <span class="stat-currency">AED</span>
+                <span class="stat-number">5-50</span>
+              </div>
+              <span class="stat-label">Unbeatable Value</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-header">
+                <span class="stat-number">12</span>
+                <span class="stat-unit">AM</span>
+              </div>
+              <span class="stat-label">Open Daily Until Late</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-glow-backdrop"></div>
+          <div class="hero-main-plate" id="heroPlate">
+            <div class="plate-ring"></div>
+            <img src="images/hero-burger.jpg" alt="Signature Shami Special Burger with Melted Golden Cheese" class="hero-dish-img" />
+            <div class="chef-signature-tag">
+              <span class="flame-emoji">🔥</span>
+              <span>Signature Hero Burger</span>
+            </div>
+          </div>
+
+          <!-- Floating Micro Cards -->
+          <div class="float-card fc-top-right">
+            <div class="fc-img-wrap">
+              <img src="images/pak-shawarma.jpg" alt="Pakistani Special Shawarma" />
+            </div>
+            <div class="fc-info">
+              <span class="fc-tag">Bestseller</span>
+              <b>Pakistani Shawarma</b>
+              <span class="fc-price">AED 8.00</span>
+            </div>
+          </div>
+
+          <div class="float-card fc-bottom-left">
+            <div class="fc-img-wrap">
+              <img src="images/kabab-pizza.jpg" alt="Kabab Pizza" />
+            </div>
+            <div class="fc-info">
+              <span class="fc-tag">Chef's Choice</span>
+              <b>Kabab Pizza</b>
+              <span class="fc-price">From AED 25.00</span>
+            </div>
+          </div>
+
+          <div class="verified-badge-card">
+            <span class="check-icon">✓</span>
+            <div>
+              <strong>100% Halal Fresh</strong>
+              <small>Cooked to order daily</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights Ticker / Key Pillars -->
+    <section class="features-ticker">
+      <div class="container">
+        <div class="ticker-grid">
+          <div class="feature-box">
+            <div class="feature-icon">🔥</div>
+            <div class="feature-text">
+              <h4>Real Desi Charcoal Spices</h4>
+              <p>Authentic secret marinades crafted in-house</p>
+            </div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon">⏱️</div>
+            <div class="feature-text">
+              <h4>Express 15-Min Prep</h4>
+              <p>Fresh & fast for curbside pickup or dine-in</p>
+            </div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon">🛵</div>
+            <div class="feature-text">
+              <h4>Hot Doorstep Delivery</h4>
+              <p>Delivering piping-hot food across Ajman</p>
+            </div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon">💳</div>
+            <div class="feature-text">
+              <h4>Honest Affordable Luxury</h4>
+              <p>Gourmet street food starting from AED 5</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Strip -->
+    <section class="section-compact services-section">
+      <div class="container">
+        <div class="services-wrapper">
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <span class="icon">🍽️</span>
+            </div>
+            <div class="service-content">
+              <h3>Dine-In Comfort</h3>
+              <p>Cozy mall seating inside Grand Mall Food Court area with a friendly, vibrant atmosphere.</p>
+            </div>
+            <span class="service-arrow">→</span>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <span class="icon">🚗</span>
+            </div>
+            <div class="service-content">
+              <h3>Curbside Pickup</h3>
+              <p>Call or WhatsApp ahead — park outside Grand Mall and we bring your hot meal straight to your car.</p>
+            </div>
+            <span class="service-arrow">→</span>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <span class="icon">🛵</span>
+            </div>
+            <div class="service-content">
+              <h3>Direct Fast Delivery</h3>
+              <p>Fast & reliable delivery right to your home, office, or university campus across Ajman.</p>
+            </div>
+            <span class="service-arrow">→</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="section menu-section" id="menu">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="eyebrow-badge">
+            <span class="badge-dot"></span>
+            <span>Artisanal Grill & Kitchen</span>
+          </div>
+          <h2 class="section-title">Explore Our Signature Menu</h2>
+          <p class="section-desc">
+            Every dish is cooked fresh upon order with pure spices, tender meats, and irresistible melting cheese. Select your category or search below.
+          </p>
+
+          <!-- Search & Filter Bar -->
+          <div class="menu-search-wrapper">
+            <div class="search-input-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="text" id="menuSearch" placeholder="Search pizza, shawarma, burger, fries..." aria-label="Search menu items" />
+              <button class="clear-search-btn" id="clearSearch" aria-label="Clear search" style="display:none;">&times;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="tabs-container">
+          <div class="tabs" id="tabs" role="tablist" aria-label="Menu Categories"></div>
+        </div>
+
+        <!-- Live Menu Grid -->
+        <div class="menu-grid" id="menuGrid" aria-live="polite"></div>
+
+        <!-- Empty Search State -->
+        <div class="empty-search" id="emptySearch" style="display:none;">
+          <div class="empty-icon">🔍</div>
+          <h3>No matching dishes found</h3>
+          <p>Try searching for "burger", "pizza", "shawarma" or click "All" to view everything.</p>
+          <button class="btn btn-primary btn-sm" id="resetSearchBtn">View All Dishes</button>
+        </div>
+
+        <div class="menu-bottom-cta">
+          <div class="custom-order-box">
+            <div>
+              <h3>Craving a custom combo or family feast?</h3>
+              <p>We do catering and special custom platter combos for parties and gatherings.</p>
+            </div>
+            <a href="https://wa.me/971522854003?text=Hi%20BBQ%20Today%2C%20I%20am%20interested%20in%20a%20family%20order%20%2F%20party%20catering!" target="_blank" rel="noopener" class="btn btn-gold">
+              <span>Chat with Chef on WhatsApp</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience / Craftsmanship Section -->
+    <section class="section craft-section" id="experience">
+      <div class="container craft-grid">
+        <div class="craft-content">
+          <div class="eyebrow-badge">
+            <span class="badge-dot"></span>
+            <span>The Desi Street Food Standard</span>
+          </div>
+          <h2 class="section-title">What Makes BBQ Today Exceptional</h2>
+          <p class="section-desc">
+            We don't compromise on flavor. From Karachi street-style Anda Shami burgers to our slow-roasted chicken shawarmas and hand-stretched crown pizzas, every single bite has our heart in it.
+          </p>
+
+          <div class="craft-features">
+            <div class="craft-feature-item">
+              <div class="cf-icon">🥩</div>
+              <div class="cf-text">
+                <h4>100% Halal Grade-A Meats</h4>
+                <p>Never frozen patties. Fresh ground beef and chicken breast marinated with authentic herbs.</p>
+              </div>
+            </div>
+
+            <div class="craft-feature-item">
+              <div class="cf-icon">🧀</div>
+              <div class="cf-text">
+                <h4>Signature Melty Cheese Crusts</h4>
+                <p>Our Royal Crown and BBQ special pizzas boast ultra-stretchy mozzarella and savory stuffed pockets.</p>
+              </div>
+            </div>
+
+            <div class="craft-feature-item">
+              <div class="cf-icon">🌯</div>
+              <div class="cf-text">
+                <h4>Authentic Chutneys & Garlic Tuom</h4>
+                <p>Homemade velvety garlic sauce and tangy mint coriander chutneys prepared daily from scratch.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="craft-visual">
+          <div class="craft-image-frame">
+            <img src="images/royal-crown.jpg" alt="Royal Crown Pizza fresh from oven" class="main-craft-img" />
+            <div class="craft-glass-badge">
+              <span class="star-rating">⭐⭐⭐⭐⭐</span>
+              <strong>Crown Crust Champion</strong>
+              <small>Grand Mall Favorite</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-images-col">
+          <div class="image-stack">
+            <div class="stack-back">
+              <img src="images/platter.jpg" alt="BBQ Today Loaded Shawarma Platter" class="rounded-img" />
+            </div>
+            <div class="stack-front">
+              <img src="images/cheese-fries.jpg" alt="Loaded Cheese Fries with Chicken and Olives" class="rounded-img shadow-float" />
+            </div>
+            <div class="experience-card">
+              <span class="exp-number">100%</span>
+              <span class="exp-text">Authentic Taste</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-copy-col">
+          <div class="eyebrow-badge">
+            <span class="badge-dot"></span>
+            <span>Our Heritage</span>
+          </div>
+          <h2 class="section-title">A Taste of Pakistan in the Heart of Ajman</h2>
+          <p class="body-p">
+            BBQ Today was founded with one simple promise: to bring the vibrant, rich, and mouthwatering street-food culture of Lahore and Karachi to food lovers in the United Arab Emirates.
+          </p>
+          <p class="body-p">
+            Whether you are taking a shopping break at Grand Mall, picking up dinner on the way home, or placing an evening order with friends, we treat every single order as a celebration of authentic flavor.
+          </p>
+
+          <div class="about-checklist">
+            <div class="check-row">
+              <span class="check-bullet">✓</span>
+              <span>Freshly cooked to order — never pre-made heat lamps</span>
+            </div>
+            <div class="check-row">
+              <span class="check-bullet">✓</span>
+              <span>Generous UAE portions paired with honest, budget-friendly pricing</span>
+            </div>
+            <div class="check-row">
+              <span class="check-bullet">✓</span>
+              <span>Open 7 days a week until midnight for late-night cravings</span>
+            </div>
+          </div>
+
+          <div class="about-btn-row">
+            <a href="#visit" class="btn btn-primary">Find Us in Grand Mall</a>
+            <a href="tel:+971522854003" class="btn btn-outline">Call Us: 052 285 4003</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="eyebrow-badge">
+            <span class="badge-dot"></span>
+            <span>Verified Testimonials</span>
+          </div>
+          <h2 class="section-title">What Our Guests Love</h2>
+          <p class="section-desc">Real reviews from our valued diners on Google Maps and food lovers across the UAE.</p>
+        </div>
+
+        <!-- Rating Summary Bar -->
+        <div class="rating-overview-card">
+          <div class="roc-score">
+            <span class="big-score">4.3</span>
+            <div class="roc-stars">★★★★★</div>
+            <span class="roc-count">100+ Google Reviews</span>
+          </div>
+          <div class="roc-divider"></div>
+          <div class="roc-tags">
+            <span class="roc-title">Most Praised Dishes:</span>
+            <div class="tag-cloud">
+              <span class="chip">👑 Anda Shami Burger</span>
+              <span class="chip">🔥 Pakistani Shawarma</span>
+              <span class="chip">🍕 BBQ Crown Pizza</span>
+              <span class="chip">🍟 Loaded Cheese Fries</span>
+              <span class="chip">🍗 Shawarma Platter</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reviews Grid -->
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="rc-header">
+              <div class="reviewer-avatar">Z</div>
+              <div class="reviewer-meta">
+                <h4 class="reviewer-name">Zeeshan Baloch</h4>
+                <span class="reviewer-tag">Google Local Guide · 5 Stars</span>
+              </div>
+              <span class="google-icon" title="Verified Google Review">G</span>
+            </div>
+            <div class="rc-stars">★★★★★</div>
+            <blockquote class="rc-quote">
+              “Authentic Pakistani Street Food. I just loved their Anda Shami Burger. I had plenty in the past but this one is my favourite… trust me!”
+            </blockquote>
+            <div class="rc-dish-tag">Ordered: Anda Shami Burger</div>
+          </article>
+
+          <article class="review-card highlight-card">
+            <div class="rc-header">
+              <div class="reviewer-avatar gold-bg">G</div>
+              <div class="reviewer-meta">
+                <h4 class="reviewer-name">Google Visitor</h4>
+                <span class="reviewer-tag">Visitor Update · Google Maps</span>
+              </div>
+              <span class="google-icon" title="Verified Google Review">G</span>
+            </div>
+            <div class="rc-stars">★★★★★</div>
+            <blockquote class="rc-quote">
+              “BBQ pizza — hands down the best Pakistani style pizza in Ajman! The crust is stuffed to perfection and cheese pull is unreal.”
+            </blockquote>
+            <div class="rc-dish-tag">Ordered: BBQ Special Pizza</div>
+          </article>
+
+          <article class="review-card">
+            <div class="rc-header">
+              <div class="reviewer-avatar">N</div>
+              <div class="reviewer-meta">
+                <h4 class="reviewer-name">Naina Maryam</h4>
+                <span class="reviewer-tag">Google Local Guide · 4 Stars</span>
+              </div>
+              <span class="google-icon" title="Verified Google Review">G</span>
+            </div>
+            <div class="rc-stars">★★★★☆</div>
+            <blockquote class="rc-quote">
+              “Ordered the shawarma, pizza and burger with a banana shake. The shawarma was really good, well seasoned and garlic sauce was top notch!”
+            </blockquote>
+            <div class="rc-dish-tag">Ordered: Shawarma & Zinger Burger</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+      <div class="container faq-container">
+        <div class="section-header text-center">
+          <div class="eyebrow-badge">
+            <span class="badge-dot"></span>
+            <span>Frequently Asked</span>
+          </div>
+          <h2 class="section-title">Got Questions? We Have Answers.</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>Where exactly is BBQ Today located in Grand Mall?</span>
+              <span class="faq-chevron">▾</span>
+            </summary>
+            <div class="faq-answer">
+              <p>We are conveniently situated inside <strong>Grand Mall, Al Rashidiya 3, Ajman</strong> (Plus code: <code>9XVR+928</code>). There is ample mall parking and quick curb access for curbside collection.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>How does Curbside Pickup work?</span>
+              <span class="faq-chevron">▾</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Simply click the "Call" or "WhatsApp" button to send us your order 15 minutes before arrival. When you pull up outside Grand Mall entrance, let us know your car model/color and our staff will deliver your hot order directly to your window!</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Do you deliver across Ajman and nearby areas?</span>
+              <span class="faq-chevron">▾</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes! We offer direct hot delivery across Ajman. Send your location pin and order on WhatsApp to <a href="https://wa.me/971522854003" class="gold-link">+971 52 285 4003</a> for instant dispatch.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Is all meat 100% Halal?</span>
+              <span class="faq-chevron">▾</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes, 100%. All meats, poultry, cheese, and ingredients are certified Halal and sourced fresh daily from verified UAE suppliers.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit & Contact Section -->
+    <section class="section visit-section" id="visit">
+      <div class="container visit-grid">
+        <div class="visit-info-card">
+          <div class="eyebrow-badge light-badge">
+            <span class="badge-dot gold"></span>
+            <span>Visit Us in Ajman</span>
+          </div>
+          <h2 class="visit-title">Come Hungry.<br />Leave Truly Happy.</h2>
+          <p class="visit-sub">Stop by for a satisfying meal or order from the comfort of your home.</p>
+
+          <ul class="visit-details-list">
+            <li class="vd-item">
+              <div class="vd-icon">📍</div>
+              <div class="vd-body">
+                <b>Address & Location</b>
+                <span>Grand Mall, Al Rashidiya 3, Ajman, United Arab Emirates</span>
+                <div class="plus-code-wrap">
+                  <span class="code-pill">Plus Code: 9XVR+928</span>
+                  <button class="copy-code-btn" id="copyCodeBtn" title="Copy Plus Code">Copy</button>
+                </div>
+              </div>
+            </li>
+
+            <li class="vd-item">
+              <div class="vd-icon">🕛</div>
+              <div class="vd-body">
+                <b>Opening Hours</b>
+                <span>Open Daily: 12:00 PM – 12:00 AM Midnight</span>
+                <small class="text-gold">Kitchen open 7 days a week</small>
+              </div>
+            </li>
+
+            <li class="vd-item">
+              <div class="vd-icon">📞</div>
+              <div class="vd-body">
+                <b>Direct Line & WhatsApp</b>
+                <a href="tel:+971522854003" class="phone-link">+971 52 285 4003</a>
+                <small>Instant response during operating hours</small>
+              </div>
+            </li>
+
+            <li class="vd-item">
+              <div class="vd-icon">💳</div>
+              <div class="vd-body">
+                <b>Average Price</b>
+                <span>AED 1 to 50 per person (Cash, Card & Online Accepted)</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="visit-action-buttons">
+            <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=BBQ+Today+Grand+Mall+Al+Rashidiya+3+Ajman" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Get Google Maps Directions</span>
+            </a>
+            <a class="btn btn-glass-light" href="https://wa.me/971522854003" target="_blank" rel="noopener">
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <div class="map-overlay-badge">
+            <span class="live-dot-pulse"></span>
+            <span>Grand Mall, Ajman</span>
+          </div>
+          <iframe title="BBQ Today Location in Grand Mall Ajman" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=BBQ%20Today%20Grand%20Mall%20Al%20Rashidiya%203%20Ajman&z=16&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <div class="logo-mark"><span class="fire-icon">🔥</span></div>
+            <div class="logo-title">
+              <span class="brand-main">BBQ<span class="gold-gradient">Today</span></span>
+              <span class="brand-tag">Pakistani Street Food</span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            Bringing authentic street grill craftsmanship, spicy shawarmas, gourmet pizzas, and comforting desi burgers to Grand Mall, Ajman.
+          </p>
+          <div class="social-links">
+            <a href="https://wa.me/971522854003" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon">💬</a>
+            <a href="tel:+971522854003" aria-label="Phone" class="social-icon">📞</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=BBQ+Today+Grand+Mall+Al+Rashidiya+3+Ajman" target="_blank" rel="noopener" aria-label="Google Maps" class="social-icon">📍</a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Quick Navigation</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Our Menu</a></li>
+            <li><a href="#experience">The BBQ Craft</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#reviews">Guest Reviews</a></li>
+            <li><a href="#visit">Location & Hours</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Menu Highlights</h4>
+          <ul>
+            <li><a href="#menu" data-filter="Pizza">Royal Crown Pizza</a></li>
+            <li><a href="#menu" data-filter="Burgers">Anda Shami Burger</a></li>
+            <li><a href="#menu" data-filter="Shawarma">Pakistani Shawarma</a></li>
+            <li><a href="#menu" data-filter="Sides">Loaded Cheese Fries</a></li>
+            <li><a href="#menu" data-filter="Shawarma">Shawarma Platter</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <h4>Contact & Orders</h4>
+          <p><strong>Hotline:</strong> <a href="tel:+971522854003">+971 52 285 4003</a></p>
+          <p><strong>Location:</strong> Grand Mall, Al Rashidiya 3, Ajman, UAE</p>
+          <p><strong>Timings:</strong> 12:00 PM – 12:00 AM Daily</p>
+          <div class="halal-stamp">
+            <span class="halal-icon">حلال</span>
+            <span>100% Certified Halal Quality</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> BBQ Today Restaurant, Grand Mall, Ajman. All rights reserved.</p>
+        <p class="designer-tag">Crafted with passion for authentic Pakistani street food</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Floating Order Bar (When items in cart) -->
+  <div class="order-bar" id="orderBar">
+    <div class="order-summary-inner">
+      <div class="cart-pill-icon">
+        <span class="cart-count-badge" id="cartCount">0</span>
+      </div>
+      <div class="cart-pill-text">
+        <span class="cart-pill-title">Your Order</span>
+        <span class="cart-pill-total" id="cartTotal">AED 0.00</span>
+      </div>
+      <button class="btn btn-gold btn-sm btn-cart-open" id="openCart" aria-label="Review and send order">
+        <span>Review Order</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Floating Sticky CTA -->
+  <div class="mobile-sticky-cta" id="mobileCta">
+    <a href="tel:+971522854003" class="btn btn-outline-call">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call Now</span>
+    </a>
+    <a href="https://wa.me/971522854003?text=Hi%20BBQ%20Today%2C%20I%20would%20like%20to%20place%20an%20order!" class="btn btn-primary-whatsapp" target="_blank" rel="noopener">
+      <span>💬 WhatsApp Order</span>
+    </a>
+  </div>
+
+  <!-- Drawer Backdrop -->
+  <div class="drawer-backdrop" id="backdrop" aria-hidden="true"></div>
+
+  <!-- Premium Slide-in Cart Drawer -->
+  <aside class="drawer" id="cartDrawer" aria-label="Your shopping cart" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="dh-title">
+        <span class="dh-fire">🔥</span>
+        <h3>Your Order Summary</h3>
+      </div>
+      <button class="drawer-close-btn" id="closeCart" aria-label="Close cart drawer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Order Mode Selector (Delivery / Pickup / Dine-in) -->
+    <div class="order-type-selector">
+      <label class="ot-option active">
+        <input type="radio" name="orderType" value="Delivery" checked />
+        <span>🛵 Delivery</span>
+      </label>
+      <label class="ot-option">
+        <input type="radio" name="orderType" value="Curbside Pickup" />
+        <span>🚗 Curbside</span>
+      </label>
+      <label class="ot-option">
+        <input type="radio" name="orderType" value="Dine-in" />
+        <span>🍽️ Dine-in</span>
+      </label>
+    </div>
+
+    <div class="drawer-body" id="cartItems">
+      <!-- Items dynamically populated by script.js -->
+    </div>
+
+    <div class="drawer-footer">
+      <!-- Special Instructions Input -->
+      <div class="special-notes-wrap">
+        <label for="orderNotes">Special Instructions / Notes:</label>
+        <input type="text" id="orderNotes" placeholder="e.g. Extra spicy, no onions, garlic sauce on side" />
+      </div>
+
+      <div class="total-breakdown">
+        <div class="tb-row">
+          <span>Items Subtotal</span>
+          <span id="drawerSubtotal">AED 0.00</span>
+        </div>
+        <div class="tb-row total-highlight">
+          <strong>Estimated Total</strong>
+          <strong id="drawerTotal" class="gold-text">AED 0.00</strong>
+        </div>
+      </div>
+
+      <a class="btn btn-primary btn-block btn-send-order" id="sendOrder" href="#" target="_blank" rel="noopener">
+        <span>Confirm & Send on WhatsApp</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <button class="btn-clear-cart" id="clearCart">Clear Entire Order</button>
+    </div>
+  </aside>
+
+  <!-- Dish Quick View Modal -->
+  <div class="modal-backdrop" id="dishModalBackdrop" aria-hidden="true"></div>
+  <div class="dish-modal" id="dishModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="modal-close-btn" id="closeModalBtn" aria-label="Close modal">&times;</button>
+    <div class="modal-body" id="modalBody">
+      <!-- Populated via script.js -->
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span class="toast-text" id="toastText">Item added</span>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
